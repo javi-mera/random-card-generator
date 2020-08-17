@@ -14,3 +14,17 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body {
+  background: green;
+  height: 1000px;
+  text-align: center;
+  margin: 315px;
+}
+
+.row {
+  background: white;
+  height: 20rem;
+  width: 12rem;
+  border-radius: 10px;
+  margin-left: 20rem;
+}

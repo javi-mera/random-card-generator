@@ -1,20 +1,11 @@
 /* eslint-disable */
 
-import "../assets/img/rigo-baby.jpg";
-import "../assets/img/4geeks.ico";
-//import 'breathecode-dom'; //DOM override to make JS easier to use
 import "../style/index.scss";
 
 window.onload = function() {
-  let card = document.querySelector("#a");
-  card = addEventListener("click", function() {
-    let cd = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
-    let cho = Math.floor(Math.random() * 4);
-
-    document.querySelector("#b").innerHTML = cd[cho];
-
-    document.querySelector("#d").innerHTML = cd[cho];
-
+  let card = addEventListener("click", function() {
+    let suit = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
+    let suitnum = Math.floor(Math.random() * 4);
     let num = [
       "A",
       "2",
@@ -30,8 +21,22 @@ window.onload = function() {
       "Q",
       "K"
     ];
-    let cho1 = Math.floor(Math.random() * 13);
+    let cardnum = Math.floor(Math.random() * 13);
 
-    document.querySelector("#c").innerHTML = num[cho1];
+    if (suit[suitnum] == "&spades;" || suit[suitnum] == "&clubs;") {
+      document.querySelector("#suit1").innerHTML = suit[suitnum];
+      document.querySelector("#suit1").style.color = "black";
+      document.querySelector("#suit2").innerHTML = suit[suitnum];
+      document.querySelector("#suit2").style.color = "black";
+      document.querySelector("#cardnumber").innerHTML = num[cardnum];
+      document.querySelector("#cardnumber").style.color = "black";
+    } else {
+      document.querySelector("#suit1").innerHTML = suit[suitnum];
+      document.querySelector("#suit1").style.color = "red";
+      document.querySelector("#suit2").innerHTML = suit[suitnum];
+      document.querySelector("#suit2").style.color = "red";
+      document.querySelector("#cardnumber").innerHTML = num[cardnum];
+      document.querySelector("#cardnumber").style.color = "red";
+    }
   });
 };
